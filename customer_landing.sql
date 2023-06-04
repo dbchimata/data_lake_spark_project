@@ -1,14 +1,14 @@
-CREATE EXTERNAL TABLE `customer_landing`(
-  `customername` string COMMENT 'from deserializer', 
-  `email` string COMMENT 'from deserializer', 
-  `phone` string COMMENT 'from deserializer', 
-  `birthday` string COMMENT 'from deserializer', 
-  `serialnumber` string COMMENT 'from deserializer', 
-  `registrationdate` bigint COMMENT 'from deserializer', 
-  `lasupdatedate` bigint COMMENT 'from deserializer', 
-  `sharewithresearchasofdate` bigint COMMENT 'from deserializer', 
-  `sharewithfriendsasofdate` bigint COMMENT 'from deserializer', 
-  `sharewithpublicasofdate` bigint COMMENT 'from deserializer')
+CREATE EXTERNAL IF NOT EXISTS TABLE `customer_landing`(
+  `customername` string, 
+  `email` string, 
+  `phone` string, 
+  `birthday` string, 
+  `serialnumber` string, 
+  `registrationdate` bigint, 
+  `lasupdatedate` bigint, 
+  `sharewithresearchasofdate` bigint, 
+  `sharewithfriendsasofdate` bigint, 
+  `sharewithpublicasofdate` bigint )
 ROW FORMAT SERDE 
   'org.openx.data.jsonserde.JsonSerDe' 
 WITH SERDEPROPERTIES ( 
